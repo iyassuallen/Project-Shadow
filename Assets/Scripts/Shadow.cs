@@ -61,7 +61,8 @@ public class Shadow : MonoBehaviour
         //move object
         shadowObj.transform.position = setInfo.position;
         shadowObj.transform.rotation = setInfo.rotation;
-        shadowObj.transform.localScale = setInfo.scale;
+        shadowObj.transform.localScale = setInfo.scale;               //This line causes shadow to change scale after game start, but it also affects facing direction :/
+        
     }
     
     //void SetShadowAnimations(PositionInfo setInfo) {}

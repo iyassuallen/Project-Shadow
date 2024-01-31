@@ -1906,7 +1906,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8188583520674409042, guid: 627a803bf39ed2845a4faac810ce724b, type: 3}
       propertyPath: m_JumpForce
-      value: 401
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 5307903208681156376, guid: 627a803bf39ed2845a4faac810ce724b, type: 3}
       propertyPath: m_LocalPosition.x

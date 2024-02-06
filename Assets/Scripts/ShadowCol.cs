@@ -16,4 +16,13 @@ public class ShadowCol : MonoBehaviour
             SceneManager.LoadScene(currentSceneName);
         }
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            string currentSceneName = SceneManager.GetActiveScene().name;
+            SceneManager.LoadScene(currentSceneName);
+        }
+    }
 }

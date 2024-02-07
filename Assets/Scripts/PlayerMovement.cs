@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public float walkSpeed = 40f;
     bool jump = false;
     bool crouch = false;
+    bool sprint = false;
 
     void Update()
     {
@@ -28,11 +29,20 @@ public class PlayerMovement : MonoBehaviour
         {
             crouch = false;
         }
+
+        if (Input.GetButton("Sprint"))
+        {
+            sprint = true;
+        }
+        else if (Input.GetButtonUp("Sprint"))
+        {
+            sprint = false;
+        }
     }
 
     void FixedUpdate()
     {
-        controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
+        controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump, sprint);
         jump = false;
     }
 

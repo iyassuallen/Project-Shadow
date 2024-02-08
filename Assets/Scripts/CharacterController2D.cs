@@ -1,5 +1,8 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class CharacterController2D : MonoBehaviour
 {
@@ -21,7 +24,20 @@ public class CharacterController2D : MonoBehaviour
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
 
-	[Header("Events")]
+    //Better Jump
+    public float fallMultiplier = 2.5f;
+    public float lowJumpMultiplier = 2f;
+
+    //Stamina
+    public Image staminaBar;
+    public float stamina, maxStamina;
+    public float jumpCost;
+    public float runCost;
+    public float chargeRate;
+    public float chargeTime = 1f;
+    private Coroutine recharge;
+
+    [Header("Events")]
 	[Space]
 
 	public UnityEvent OnLandEvent;
@@ -31,16 +47,6 @@ public class CharacterController2D : MonoBehaviour
 
 	public BoolEvent OnCrouchEvent;
 	private bool m_wasCrouching = false;
-
-    //SpriteRenderer m_SpriteRenderer;
-    //public bool facingLeft;
-
-    /*
-    public void Start()
-    {
-        m_SpriteRenderer = GetComponent<SpriteRenderer>();
-        facingLeft = m_SpriteRenderer.flipX;
-    }*/
 
     private void Awake()
 	{
@@ -70,8 +76,30 @@ public class CharacterController2D : MonoBehaviour
 					OnLandEvent.Invoke();
 			}
 		}
+
+        //Better Jump
+        if (m_Rigidbody2D.velocity.y < 0)
+        {
+            m_Rigidbody2D.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+        }
+        else if (m_Rigidbody2D.velocity.y > 0 && !Input.GetButton("Jump"))
+        {
+            m_Rigidbody2D.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
+        }
 	}
 
+    private IEnumerator RechargeStamina()
+    {
+        yield return new WaitForSeconds(chargeTime);
+
+        while (stamina < maxStamina)
+        {
+            stamina += chargeRate / 10f;
+            if (stamina > maxStamina) stamina = maxStamina;
+            staminaBar.fillAmount = stamina / maxStamina;
+            yield return new WaitForSeconds(.1f);
+        }
+    }
 
 	public void Move(float move, bool crouch, bool jump, bool sprint)
 	{
@@ -102,13 +130,11 @@ public class CharacterController2D : MonoBehaviour
 
 				// Disable one of the colliders when crouching
 				if (m_CrouchDisableCollider != null)
-                    //m_CrouchDisableCollider.enabled = false;
                     m_CrouchDisableCollider.isTrigger = true;
             } else
 			{
 				// Enable the collider when not crouching
 				if (m_CrouchDisableCollider != null)
-                    //m_CrouchDisableCollider.enabled = true;
                     m_CrouchDisableCollider.isTrigger = false;
 
                 if (m_wasCrouching)
@@ -117,9 +143,16 @@ public class CharacterController2D : MonoBehaviour
 					OnCrouchEvent.Invoke(false);
 				}
 			}
-            if (sprint)
+
+            if (sprint && !crouch && stamina > 0)
             {
                 move *= m_SprintSpeed;
+
+                stamina -= runCost * Time.deltaTime;
+                if (stamina < 0) stamina = 0;
+                staminaBar.fillAmount = stamina / maxStamina;
+                if (recharge != null) StopCoroutine(recharge);
+                recharge = StartCoroutine(RechargeStamina());
             }
 
             // Move the character by finding the target velocity
@@ -141,15 +174,24 @@ public class CharacterController2D : MonoBehaviour
 			}
 		}
 		// If the player should jump...
-		if (m_Grounded && jump)
+		if (m_Grounded && jump && stamina > 0)
 		{
 			// Add a vertical force to the player.
 			m_Grounded = false;
-			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+            m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+
+            stamina -= jumpCost;
+            if (stamina < 0) stamina = 0;
+            staminaBar.fillAmount = stamina / maxStamina;
+            if (recharge != null) StopCoroutine(recharge);
+            recharge = StartCoroutine(RechargeStamina());
+        }
+        // Slow movement speed while in the air.... (NOT WORKING)
+        if (jump && m_AirControl)
+        {
             move *= m_AirSpeed;
         }
     }
-
 
 	private void Flip()
 	{
@@ -160,6 +202,5 @@ public class CharacterController2D : MonoBehaviour
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
-        //facingLeft = !facingLeft;
     }
 }

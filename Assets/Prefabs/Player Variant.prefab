@@ -94,11 +94,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8188583520674409042, guid: 627a803bf39ed2845a4faac810ce724b, type: 3}
       propertyPath: m_JumpForce
-      value: 600
+      value: 615
+      objectReference: {fileID: 0}
+    - target: {fileID: -8188583520674409042, guid: 627a803bf39ed2845a4faac810ce724b, type: 3}
+      propertyPath: m_AirControl
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8188583520674409042, guid: 627a803bf39ed2845a4faac810ce724b, type: 3}
       propertyPath: m_SprintSpeed
       value: 1.65
+      objectReference: {fileID: 0}
+    - target: {fileID: -8188583520674409042, guid: 627a803bf39ed2845a4faac810ce724b, type: 3}
+      propertyPath: fallMultiplier
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8188583520674409042, guid: 627a803bf39ed2845a4faac810ce724b, type: 3}
+      propertyPath: lowJumpMultiplier
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2956113212739688872, guid: 627a803bf39ed2845a4faac810ce724b, type: 3}
       propertyPath: m_Offset.x

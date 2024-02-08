@@ -1859,38 +1859,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Variant
       objectReference: {fileID: 0}
-    - target: {fileID: 4920189348141674007, guid: 8d1cec5b61942f74996547b4afe38190, type: 3}
-      propertyPath: sprintSpeed
-      value: 1.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 5494262588163845788, guid: 8d1cec5b61942f74996547b4afe38190, type: 3}
-      propertyPath: runCost
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 5494262588163845788, guid: 8d1cec5b61942f74996547b4afe38190, type: 3}
-      propertyPath: stamina
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 5494262588163845788, guid: 8d1cec5b61942f74996547b4afe38190, type: 3}
-      propertyPath: jumpCost
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 5494262588163845788, guid: 8d1cec5b61942f74996547b4afe38190, type: 3}
-      propertyPath: chargeRate
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 5494262588163845788, guid: 8d1cec5b61942f74996547b4afe38190, type: 3}
-      propertyPath: chargeTime
-      value: 1.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 5494262588163845788, guid: 8d1cec5b61942f74996547b4afe38190, type: 3}
-      propertyPath: maxStamina
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 5494262588163845788, guid: 8d1cec5b61942f74996547b4afe38190, type: 3}
       propertyPath: staminaBar
       value: 
       objectReference: {fileID: 691276939}
+    - target: {fileID: 5494262588163845788, guid: 8d1cec5b61942f74996547b4afe38190, type: 3}
+      propertyPath: OnCrouchEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5494262588163845788, guid: 8d1cec5b61942f74996547b4afe38190, type: 3}
+      propertyPath: OnCrouchEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5494262588163845788, guid: 8d1cec5b61942f74996547b4afe38190, type: 3}
+      propertyPath: OnCrouchEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1387923055}
+    - target: {fileID: 5494262588163845788, guid: 8d1cec5b61942f74996547b4afe38190, type: 3}
+      propertyPath: OnCrouchEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5494262588163845788, guid: 8d1cec5b61942f74996547b4afe38190, type: 3}
+      propertyPath: OnCrouchEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnCrouching
+      objectReference: {fileID: 0}
+    - target: {fileID: 5494262588163845788, guid: 8d1cec5b61942f74996547b4afe38190, type: 3}
+      propertyPath: OnCrouchEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerMovement, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5494262588163845788, guid: 8d1cec5b61942f74996547b4afe38190, type: 3}
+      propertyPath: OnCrouchEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

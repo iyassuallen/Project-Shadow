@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     bool crouch = false;
     bool sprint = false;
 
+    public Animator animator;
+
     void Update()
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * walkSpeed;
@@ -38,6 +40,11 @@ public class PlayerMovement : MonoBehaviour
         {
             sprint = false;
         }
+    }
+
+    public void OnCrouching(bool isCrouching)
+    {
+        animator.SetBool("isCrouching", isCrouching);
     }
 
     void FixedUpdate()

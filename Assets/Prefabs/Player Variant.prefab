@@ -26,8 +26,8 @@ Transform:
   m_GameObject: {fileID: 8343541062039706719}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.18, z: 0}
-  m_LocalScale: {x: 1.65, y: 1.65, z: 1}
+  m_LocalPosition: {x: 0, y: -0.98, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 849686926716064810}
@@ -206,7 +206,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8188583520674409042, guid: 627a803bf39ed2845a4faac810ce724b, type: 3}
       propertyPath: m_AirControl
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8188583520674409042, guid: 627a803bf39ed2845a4faac810ce724b, type: 3}
       propertyPath: m_SprintSpeed
@@ -220,17 +220,45 @@ PrefabInstance:
       propertyPath: lowJumpMultiplier
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: -8188583520674409042, guid: 627a803bf39ed2845a4faac810ce724b, type: 3}
+      propertyPath: OnCrouchEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8188583520674409042, guid: 627a803bf39ed2845a4faac810ce724b, type: 3}
+      propertyPath: OnCrouchEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4920189348141674007}
+    - target: {fileID: -8188583520674409042, guid: 627a803bf39ed2845a4faac810ce724b, type: 3}
+      propertyPath: OnCrouchEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8188583520674409042, guid: 627a803bf39ed2845a4faac810ce724b, type: 3}
+      propertyPath: OnCrouchEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnCrouching
+      objectReference: {fileID: 0}
+    - target: {fileID: -8188583520674409042, guid: 627a803bf39ed2845a4faac810ce724b, type: 3}
+      propertyPath: OnCrouchEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerMovement, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: -8188583520674409042, guid: 627a803bf39ed2845a4faac810ce724b, type: 3}
+      propertyPath: OnCrouchEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 444662561263703333, guid: 627a803bf39ed2845a4faac810ce724b, type: 3}
       propertyPath: animator
       value: 
       objectReference: {fileID: 1567577273697465227}
+    - target: {fileID: 2956113212739688872, guid: 627a803bf39ed2845a4faac810ce724b, type: 3}
+      propertyPath: m_Radius
+      value: 0.99
+      objectReference: {fileID: 0}
     - target: {fileID: 2956113212739688872, guid: 627a803bf39ed2845a4faac810ce724b, type: 3}
       propertyPath: m_Offset.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2956113212739688872, guid: 627a803bf39ed2845a4faac810ce724b, type: 3}
       propertyPath: m_Offset.y
-      value: -1.18
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5307903208681156376, guid: 627a803bf39ed2845a4faac810ce724b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -371,3 +399,14 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4920189348141674007 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 444662561263703333, guid: 627a803bf39ed2845a4faac810ce724b, type: 3}
+  m_PrefabInstance: {fileID: 4783882847472384818}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3036982208772825718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcc906644e20e7c478279c6a2ebf33fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

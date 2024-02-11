@@ -8,17 +8,25 @@ public class ShadowCol : MonoBehaviour
 {
     [SerializeField] string PlayerTag;
     [SerializeField] bool shadowDeathOn = true;
-    //public bool isShadow = true;
+    public float transitionTime = 2f;
 
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == PlayerTag && shadowDeathOn)
         {
-            string currentSceneName = SceneManager.GetActiveScene().name;
-            SceneManager.LoadScene(currentSceneName);
+            StartCoroutine(LoadLevel());
         }
     }
 
+    void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.gameObject.tag == PlayerTag && shadowDeathOn)
+        {
+            StopCoroutine(LoadLevel());
+        }
+    }
+
+    //Delete later
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
@@ -31,5 +39,13 @@ public class ShadowCol : MonoBehaviour
         {
             shadowDeathOn = !shadowDeathOn;
         }
+    }
+
+    IEnumerator LoadLevel()
+    {
+        yield return new WaitForSeconds(transitionTime);
+
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentSceneName);
     }
 }

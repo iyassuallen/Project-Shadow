@@ -5,27 +5,18 @@ using UnityEngine;
 public class Lever : MonoBehaviour
 {
     [SerializeField] string PlayerTag;
-    public bool isOn;
-    public GameObject interObject;
+    public bool isOn = false;
 
-    void Start()
-    {
-        interObject.GetComponent<Collider2D>().enabled = false;
-    }
-
-    void OnTriggerEnter2D(Collider2D col)
+    void OnTriggerStay2D(Collider2D col)
     {
         if (col.gameObject.tag == PlayerTag)
         {
-
-            if (interObject.activeSelf)
+            if (Input.GetButtonDown("Interact"))
             {
-                
+                isOn = !isOn;
+                Debug.Log(isOn);
             }
-            else
-            {
-                
-            }
+            
         }
     }
 }

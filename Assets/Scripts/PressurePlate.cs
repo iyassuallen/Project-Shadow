@@ -5,6 +5,7 @@ using UnityEngine;
 public class PressurePlate : MonoBehaviour
 {
     public bool isPressed = false;
+    public bool holdPressed = false;
 
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -20,7 +21,7 @@ public class PressurePlate : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Player")
+        if (col.gameObject.tag == "Player" && holdPressed)
         {
             isPressed = false;
         }

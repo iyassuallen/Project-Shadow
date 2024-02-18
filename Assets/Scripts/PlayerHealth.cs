@@ -13,16 +13,26 @@ public class PlayerHealth : MonoBehaviour
     public float chargeTime = 1f;
     private Coroutine recharge;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    public void Damage(bool spike, bool shadow)
     {
-        
+        if (spike)
+        {
+            health -= spikeCost;
+            if (health < 0) health = 0;
+            healthBar.fillAmount = health / maxHealth;
+            if (recharge != null) StopCoroutine(recharge);
+            recharge = StartCoroutine(RechargeHealth());
+        }
+
+        if (shadow)
+        {
+            health -= shadowCost * Time.deltaTime;
+            if (health < 0) health = 0;
+            healthBar.fillAmount = health / maxHealth;
+            if (recharge != null) StopCoroutine(recharge);
+            recharge = StartCoroutine(RechargeHealth());
+        }
     }
 
     private IEnumerator RechargeHealth()

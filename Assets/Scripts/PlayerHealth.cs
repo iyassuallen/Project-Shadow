@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -13,6 +15,15 @@ public class PlayerHealth : MonoBehaviour
     public float chargeTime = 1f;
     private Coroutine recharge;
 
+    public float transitionTime = 0.5f;
+
+    private void Update()
+    {
+        if (health == 0)
+        {
+            StartCoroutine(LoadLevel());
+        }
+    }
 
     public void Damage(bool spike, bool shadow)
     {
@@ -46,5 +57,13 @@ public class PlayerHealth : MonoBehaviour
             healthBar.fillAmount = health / maxHealth;
             yield return new WaitForSeconds(.1f);
         }
+    }
+
+    IEnumerator LoadLevel()
+    {
+        yield return new WaitForSeconds(transitionTime);
+
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentSceneName);
     }
 }

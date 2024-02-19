@@ -266,7 +266,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5307903208681156376, guid: 627a803bf39ed2845a4faac810ce724b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -17.911
+      value: -7.96
       objectReference: {fileID: 0}
     - target: {fileID: 5307903208681156376, guid: 627a803bf39ed2845a4faac810ce724b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -367,6 +367,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7513766836886378820, guid: 627a803bf39ed2845a4faac810ce724b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1567577273697465227}
+    - targetCorrespondingSourceObject: {fileID: 7513766836886378820, guid: 627a803bf39ed2845a4faac810ce724b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4161061315496665788}
   m_SourcePrefab: {fileID: 100100000, guid: 627a803bf39ed2845a4faac810ce724b, type: 3}
 --- !u!4 &849686926716064810 stripped
 Transform:
@@ -399,6 +402,26 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4161061315496665788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3036982208772825718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7685f53f70f789479782c045dcc47af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
+  health: 100
+  maxHealth: 100
+  spikeCost: 100
+  shadowCost: 45
+  chargeRate: 15
+  chargeTime: 1.75
+  transitionTime: 2
 --- !u!114 &4920189348141674007 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 444662561263703333, guid: 627a803bf39ed2845a4faac810ce724b, type: 3}

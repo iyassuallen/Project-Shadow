@@ -16,7 +16,7 @@ public class DamageCol : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
-            if (isShadow)
+            if (isShadow && !col.isTrigger)
             {
                 shadowCol = true;
             }
@@ -30,7 +30,7 @@ public class DamageCol : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Player" && isShadow)
+        if (col.gameObject.tag == "Player" && isShadow) 
         {
             shadowCol = false;
         }

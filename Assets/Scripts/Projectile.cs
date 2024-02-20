@@ -11,12 +11,29 @@ public class Projectile : MonoBehaviour
     public bool isAutomatic = false;
     public PressurePlate pressurePlate;
 
+    float timer;
+
     void Update()
     {
-        if (pressurePlate.isPressed || isAutomatic)
+        timer += Time.deltaTime;
+
+        if (pressurePlate.isPressed)
         {
             var projectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
             projectile.GetComponent<Rigidbody2D>().velocity = projectileSpawnPoint.up * projectileSpeed;
         }
+
+        if (isAutomatic && timer > 2)
+        {
+            timer = 0;
+            var projectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
+            projectile.GetComponent<Rigidbody2D>().velocity = projectileSpawnPoint.up * projectileSpeed;
+        }
     }
+
+    /*void Shoot()
+    {
+        var projectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
+        projectile.GetComponent<Rigidbody2D>().velocity = projectileSpawnPoint.up * projectileSpeed;
+    }*/
 }

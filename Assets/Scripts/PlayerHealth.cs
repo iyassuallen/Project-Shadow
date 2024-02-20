@@ -23,6 +23,11 @@ public class PlayerHealth : MonoBehaviour
         {
             StartCoroutine(LoadLevel());
         }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            StartCoroutine(LoadLevel());
+        }
     }
 
     public void Damage(bool spike, bool shadow)

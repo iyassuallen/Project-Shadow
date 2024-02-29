@@ -186,11 +186,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8188583520674409042, guid: 627a803bf39ed2845a4faac810ce724b, type: 3}
       propertyPath: jumpCost
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -8188583520674409042, guid: 627a803bf39ed2845a4faac810ce724b, type: 3}
       propertyPath: chargeRate
-      value: 15
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: -8188583520674409042, guid: 627a803bf39ed2845a4faac810ce724b, type: 3}
       propertyPath: chargeTime
@@ -250,7 +250,7 @@ PrefabInstance:
       objectReference: {fileID: 1567577273697465227}
     - target: {fileID: 2956113212739688872, guid: 627a803bf39ed2845a4faac810ce724b, type: 3}
       propertyPath: m_Radius
-      value: 0.99
+      value: 1.03
       objectReference: {fileID: 0}
     - target: {fileID: 2956113212739688872, guid: 627a803bf39ed2845a4faac810ce724b, type: 3}
       propertyPath: m_Offset.x
@@ -258,15 +258,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2956113212739688872, guid: 627a803bf39ed2845a4faac810ce724b, type: 3}
       propertyPath: m_Offset.y
-      value: -1
+      value: -0.97
       objectReference: {fileID: 0}
     - target: {fileID: 5307903208681156376, guid: 627a803bf39ed2845a4faac810ce724b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 36.7
+      value: -349.9
       objectReference: {fileID: 0}
     - target: {fileID: 5307903208681156376, guid: 627a803bf39ed2845a4faac810ce724b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.96
+      value: -30.9
       objectReference: {fileID: 0}
     - target: {fileID: 5307903208681156376, guid: 627a803bf39ed2845a4faac810ce724b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -418,10 +418,10 @@ MonoBehaviour:
   health: 100
   maxHealth: 100
   spikeCost: 100
-  shadowCost: 45
+  shadowCost: 75
   chargeRate: 15
-  chargeTime: 1.75
-  transitionTime: 2
+  chargeTime: 1.25
+  transitionTime: 0.25
 --- !u!114 &4920189348141674007 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 444662561263703333, guid: 627a803bf39ed2845a4faac810ce724b, type: 3}

@@ -15,6 +15,11 @@ public class Shadow : MonoBehaviour
     private bool created;
     private string savedAnim;
 
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+    }
+
     void FixedUpdate()
     {
         //create information for position

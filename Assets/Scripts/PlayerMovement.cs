@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,9 +19,13 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * walkSpeed;
 
+        //Checks for movement for walk animation
+        animator.SetFloat("speed", Mathf.Abs(horizontalMove));
+
         if (Input.GetButtonDown("Jump"))
         {
             jump = true;
+            animator.SetBool("isJumping", true);
         }
 
         if (Input.GetButtonDown("Crouch"))
@@ -35,11 +40,21 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButton("Sprint"))
         {
             sprint = true;
+            animator.SetBool("isSprinting", true);
         }
         else if (Input.GetButtonUp("Sprint"))
         {
             sprint = false;
+            animator.SetBool("isSprinting", false);
         }
+    }
+
+    public bool testJump = false;
+    public int landCount = 0;
+    public void OnLanding()
+    { 
+            animator.SetBool("isJumping", false);
+            testJump = false;
     }
 
     public void OnCrouching(bool isCrouching)

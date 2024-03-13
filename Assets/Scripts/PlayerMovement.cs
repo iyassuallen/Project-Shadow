@@ -12,17 +12,24 @@ public class PlayerMovement : MonoBehaviour
     bool jump = false;
     bool crouch = false;
     bool sprint = false;
-
+    
     public Animator animator;
 
     void Update()
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * walkSpeed;
-
+        bool crouchCheck = animator.GetCurrentAnimatorStateInfo(0).IsName("Player_CrouchWalk");
+        bool crouchCheck2 = animator.GetCurrentAnimatorStateInfo(0).IsName("Player_Crouch");
+        Debug.Log(animator.GetCurrentAnimatorStateInfo(0).IsName("Player_CrouchWalk"));
         //Checks for movement for walk animation
         animator.SetFloat("speed", Mathf.Abs(horizontalMove));
 
-        if (Input.GetButtonDown("Jump"))
+       /* if ()
+        { 
+            
+        }*/
+
+        if (Input.GetButtonDown("Jump") && crouch != true && crouchCheck != true && crouchCheck2 != true)
         {
             jump = true;
             animator.SetBool("isJumping", true);
@@ -37,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
             crouch = false;
         }
 
-        if (Input.GetButton("Sprint"))
+        if (Input.GetButton("Sprint") && crouch != true && jump != true)
         {
             sprint = true;
             animator.SetBool("isSprinting", true);
@@ -47,14 +54,18 @@ public class PlayerMovement : MonoBehaviour
             sprint = false;
             animator.SetBool("isSprinting", false);
         }
+
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("isCrouching"))
+        {
+            crouch = true;
+            jump = false;
+        }
     }
 
-    public bool testJump = false;
-    public int landCount = 0;
+
     public void OnLanding()
     { 
             animator.SetBool("isJumping", false);
-            testJump = false;
     }
 
     public void OnCrouching(bool isCrouching)

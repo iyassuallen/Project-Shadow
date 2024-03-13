@@ -20,7 +20,6 @@ public class PlayerMovement : MonoBehaviour
         horizontalMove = Input.GetAxisRaw("Horizontal") * walkSpeed;
         bool crouchCheck = animator.GetCurrentAnimatorStateInfo(0).IsName("Player_CrouchWalk");
         bool crouchCheck2 = animator.GetCurrentAnimatorStateInfo(0).IsName("Player_Crouch");
-        Debug.Log(animator.GetCurrentAnimatorStateInfo(0).IsName("Player_CrouchWalk"));
         //Checks for movement for walk animation
         animator.SetFloat("speed", Mathf.Abs(horizontalMove));
 

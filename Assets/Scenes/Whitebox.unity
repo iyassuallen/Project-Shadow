@@ -3357,6 +3357,10 @@ PrefabInstance:
       propertyPath: holdPressed
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2582651418748101758, guid: 0aab277b51391774db3ac7f3293b007f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5474731592525151737, guid: 0aab277b51391774db3ac7f3293b007f, type: 3}
       propertyPath: m_Name
       value: Pressure Plate (2)
@@ -3765,6 +3769,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2582651418748101758, guid: 0aab277b51391774db3ac7f3293b007f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5474731592525151737, guid: 0aab277b51391774db3ac7f3293b007f, type: 3}
       propertyPath: m_Name
       value: Pressure Plate
@@ -11101,11 +11109,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1893066364446478377, guid: 8d1cec5b61942f74996547b4afe38190, type: 3}
       propertyPath: m_Size.y
-      value: 6.7515907
+      value: 6.7409253
       objectReference: {fileID: 0}
     - target: {fileID: 1893066364446478377, guid: 8d1cec5b61942f74996547b4afe38190, type: 3}
       propertyPath: m_Offset.y
-      value: -0.121806145
+      value: -0.11647344
       objectReference: {fileID: 0}
     - target: {fileID: 1893066364446478377, guid: 8d1cec5b61942f74996547b4afe38190, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
@@ -11201,7 +11209,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7738870074133242522, guid: 8d1cec5b61942f74996547b4afe38190, type: 3}
       propertyPath: m_Offset.y
-      value: -2.49
+      value: -2.47
       objectReference: {fileID: 0}
     - target: {fileID: 8343541062039706719, guid: 8d1cec5b61942f74996547b4afe38190, type: 3}
       propertyPath: m_IsActive

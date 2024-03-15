@@ -1205,7 +1205,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -95.24, y: 1.15}
+  m_AnchoredPosition: {x: -95.49, y: -1.8}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &187674372
@@ -4853,8 +4853,8 @@ Transform:
   m_GameObject: {fileID: 573498627}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0177, y: 0, z: 0}
-  m_LocalScale: {x: 1.8408966, y: 1.8390574, z: 1.8390574}
+  m_LocalPosition: {x: 1.1393, y: -1.8933, z: 0}
+  m_LocalScale: {x: 1.9574755, y: 2.1882536, z: 1.8390574}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1688946753}
@@ -5465,7 +5465,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -29.559998, y: -0.80000114}
+  m_AnchoredPosition: {x: -28.64, y: -2.14}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &630779321 stripped
@@ -5950,7 +5950,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -382.85, y: -44.95}
+  m_AnchoredPosition: {x: -380.53, y: -49.27}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &727005495
@@ -5973,7 +5973,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Last Section of Playtest
+  m_text: Last Section of Demo
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -6896,7 +6896,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Hold 'Left Shift' to Sprint
+  m_text: 'Hold ''Left Shift'' to Sprint
+
+    Takes a lot of stamina'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -6959,7 +6961,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 5.8301096, y: 2.0900393, z: 4.747523, w: 1.5400267}
+  m_margin: {x: 5.8301096, y: 2.0900393, z: 4.747523, w: 1.1202307}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -7026,7 +7028,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -57.730003, y: 0.32999992}
+  m_AnchoredPosition: {x: -57.77, y: -0.8}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &886224964
@@ -7755,7 +7757,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press 'Space' to Jump
+  m_text: 'Press ''Space'' to Jump
+
+    Hold ''Space'' for higher jump
+
+    Jumping
+    takes Stamina (green bar)
+
+    You can''t jump with no stamina'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -7818,7 +7827,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 5.8301096, y: 2.0900393, z: 5.7112107, w: 1.5400267}
+  m_margin: {x: 5.8301096, y: 2.0900393, z: 1.0304594, w: -0.69381046}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -7893,7 +7902,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.4, y: -13.9}
+  m_AnchoredPosition: {x: -4.82, y: -9.86}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &948489557
@@ -12255,7 +12264,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 5.8301096, y: 2.0900393, z: 4.0373178, w: 1.5400267}
+  m_margin: {x: 5.8301096, y: 2.1318226, z: 4.0373178, w: 1.5400267}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -12322,7 +12331,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -140.98001, y: 3.1999989}
+  m_AnchoredPosition: {x: -141.14, y: -0.8}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1402783543
@@ -12736,7 +12745,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 26.12, y: 0.37}
+  m_AnchoredPosition: {x: 26.67, y: -0.46}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1437149834
@@ -12759,7 +12768,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: A & D to Move, R to Restart
+  m_text: "A & D to Move, R to Restart\nShadow takes your health (red bar) if it
+    touches you\n     <-"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -12822,7 +12832,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 3.3890324, y: 2.0900393, z: 5.7112107, w: 1.5400267}
+  m_margin: {x: 3.3890324, y: 2.0900393, z: 5.7112107, w: -0.21249771}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -15921,8 +15931,8 @@ Transform:
   m_GameObject: {fileID: 1826457941}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -33.816, y: 0, z: 0}
-  m_LocalScale: {x: 1.5659574, y: 1.8390574, z: 1.8390574}
+  m_LocalPosition: {x: -34.3378, y: -1.9008, z: 0}
+  m_LocalScale: {x: 1.8362414, y: 2.189833, z: 1.8390574}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1688946753}
@@ -18814,7 +18824,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3939024559654856117, guid: 35f010420c5d7694f844d797983f564a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.25
+      value: -4.250799
       objectReference: {fileID: 0}
     - target: {fileID: 3939024559654856117, guid: 35f010420c5d7694f844d797983f564a, type: 3}
       propertyPath: m_LocalPosition.z

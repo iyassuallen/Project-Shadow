@@ -17,6 +17,14 @@ public class PlayerHealth : MonoBehaviour
 
     public float transitionTime = 0.5f;
 
+    //checkpoint
+    private Vector2 respawnPoint;
+
+    void Start()
+    {
+        respawnPoint = transform.position;
+    }
+
     private void Update()
     {
         if (health == 0)
@@ -52,6 +60,20 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    //checkpoint
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Checkpoint")
+        {
+            respawnPoint = transform.position;
+        }
+    }
+
+    public void UpdateCheckpoint(Vector2 pos)
+    {
+        respawnPoint = pos;
+    }
+
     private IEnumerator RechargeHealth()
     {
         yield return new WaitForSeconds(chargeTime);
@@ -69,7 +91,10 @@ public class PlayerHealth : MonoBehaviour
     {
         yield return new WaitForSeconds(transitionTime);
 
-        string currentSceneName = SceneManager.GetActiveScene().name;
-        SceneManager.LoadScene(currentSceneName);
+        //string currentSceneName = SceneManager.GetActiveScene().name;
+        //SceneManager.LoadScene(currentSceneName);
+        transform.position = respawnPoint;
+        health = maxHealth;
+        //health = maxHealth;
     }
 }

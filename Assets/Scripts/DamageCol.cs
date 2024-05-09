@@ -34,6 +34,11 @@ public class DamageCol : MonoBehaviour
         {
             shadowCol = false;
         }
+
+        if (col.gameObject.tag == "Player" && isSpike)
+        {
+            spikeCol = false;
+        }
     }
 
     // Update is called once per frame

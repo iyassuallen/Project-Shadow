@@ -15,6 +15,8 @@ public class PlayerHealth : MonoBehaviour
     public float chargeTime = 1f;
     private Coroutine recharge;
 
+    public Vector2 respawnPoint;
+
     public float transitionTime = 0.5f;
 
     private void Update()
@@ -68,9 +70,10 @@ public class PlayerHealth : MonoBehaviour
     {
         yield return new WaitForSeconds(transitionTime);
 
-        string currentSceneName = SceneManager.GetActiveScene().name;
-        SceneManager.LoadScene(currentSceneName);
-        //transform.position = respawnPoint;
-        //health = maxHealth;
+        //string currentSceneName = SceneManager.GetActiveScene().name;
+        //SceneManager.LoadScene(currentSceneName);
+        transform.position = respawnPoint;
+        health = maxHealth;
+        healthBar.fillAmount = health / maxHealth;
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController2D controller;
-
+    
     float horizontalMove = 0f;
     public float walkSpeed = 40f;
     bool jump = false;
@@ -14,6 +14,12 @@ public class PlayerMovement : MonoBehaviour
     bool sprint = false;
     
     public Animator animator;
+    private SoundManager sound;
+
+    private void Awake()
+    {
+        sound = GameObject.FindGameObjectWithTag("Sound").GetComponent<SoundManager>();
+    }
 
     void Update()
     {
@@ -23,11 +29,21 @@ public class PlayerMovement : MonoBehaviour
 
         //Checks for movement for walk animation
         animator.SetFloat("speed", Mathf.Abs(horizontalMove));
-       
+
+        if (Mathf.Abs(horizontalMove) > 0 && !jump)
+        {
+            sound.PlaySound(sound.walk);
+        }
+        else
+        {
+            sound.StopSound();
+        }
+
         if (Input.GetButtonDown("Jump") && crouch != true && crouchCheck != true && crouchCheck2 != true)
         {
             jump = true;
             animator.SetBool("isJumping", true);
+            sound.PlaySound(sound.jump);
         }
 
         if (Input.GetButtonDown("Crouch"))
@@ -61,6 +77,7 @@ public class PlayerMovement : MonoBehaviour
     public void OnLanding()
     {
         animator.SetBool("isJumping", false);
+        sound.PlaySound(sound.land);
     }
 
     public void OnCrouching(bool isCrouching)

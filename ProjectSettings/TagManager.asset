@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Checkpoint
   - GM
+  - Sound
   layers:
   - Default
   - TransparentFX

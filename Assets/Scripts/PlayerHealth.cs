@@ -19,6 +19,13 @@ public class PlayerHealth : MonoBehaviour
 
     public float transitionTime = 0.5f;
 
+    public FallingPlatform fallingPlatform1;
+    public FallingPlatform fallingPlatform2;
+    public FallingPlatform fallingPlatform3;
+
+    public CharacterController2D playerStamina;
+
+
     private void Update()
     {
         if (health == 0)
@@ -75,5 +82,12 @@ public class PlayerHealth : MonoBehaviour
         transform.position = respawnPoint;
         health = maxHealth;
         healthBar.fillAmount = health / maxHealth;
+
+        playerStamina.stamina = playerStamina.maxStamina;
+        playerStamina.staminaBar.fillAmount = playerStamina.stamina / playerStamina.maxStamina;
+
+        fallingPlatform1.ResetPlatform();
+        fallingPlatform2.ResetPlatform();
+        fallingPlatform3.ResetPlatform();
     }
 }

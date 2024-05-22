@@ -7,14 +7,23 @@ public class FallingPlatform : MonoBehaviour
     private float fallDelay = 1f;
     //private float resetDelay = 1f;
     private float destroyDelay = 2f;
-    public Vector2 ogPos;
+    private Vector2 ogPos;
 
     [SerializeField] private Rigidbody2D rb;
+
+    private bool isFalling = false;
+
+    public void Start()
+    {
+        ogPos = transform.position;
+        rb.bodyType = RigidbodyType2D.Kinematic;
+    }
 
     private void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.CompareTag("Player"))
         {
+            isFalling = true;
             StartCoroutine(Fall());
         }
     }
@@ -22,19 +31,18 @@ public class FallingPlatform : MonoBehaviour
     private IEnumerator Fall()
     {
         yield return new WaitForSeconds(fallDelay);
-        rb.bodyType = RigidbodyType2D.Dynamic;
-        //StartCoroutine(Reset());
-        //Destroy(gameObject, destroyDelay);
-        yield return new WaitForSeconds(2f);
+        if (isFalling)
+        {
+            rb.bodyType = RigidbodyType2D.Dynamic;
+        }
+    }
+
+    public void ResetPlatform()
+    {
+        isFalling = false;
+        rb.velocity = Vector2.zero;
         rb.bodyType = RigidbodyType2D.Kinematic;
         transform.position = ogPos;
     }
-
-    /*private IEnumerator Reset()
-    {
-        yield return new WaitForSeconds(resetDelay);
-        rb.bodyType = RigidbodyType2D.Kinematic;
-        transform.position = ogPos;
-    }*/
 }
 

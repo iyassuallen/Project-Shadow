@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Whitebox.unity
     guid: 52cc2aa0631372d4e9135596c4c8dca6
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 8d0635904ad05344089fa696d0ef3c04
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
